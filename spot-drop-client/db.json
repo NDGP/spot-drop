@@ -1,0 +1,55 @@
+{
+    "users": [
+        {
+            
+            "userName":"bobby b",
+            "email":"bobby@gmail.com",
+            "password":"$2a$10$tH3SM/Iik0pinIQjb8O48.TZ.Znr4eLXkPJn18dsw3Xr0v074O2KK"
+        },
+        {
+           
+            "userName":"sam person",
+            "email":"human@gmail.com",
+            "password":"$2a$10$E1bDz7W8RnOFDP.UKzF6fONSmPUt3ASYnX3DdugcLmm4WL80SzXFa"
+        }
+    
+    ],
+    "drops": [
+        {
+            "_id":"61e86a03b4606b5fe783ac1c",
+            "user":"61e82ab3607db4a63e64f5f8",
+            "file":"hello ever",
+            "location":{"type":"Point","coordinates":[-122.5, 37.7]}
+        },
+        {
+            "_id":"61e86a0fb4606b5fe783ac1e",
+            "user":"61e82ab3607db4a63e64f5f8",
+            "file":"Its us 5ever",
+            "location":{"type":"Point","coordinates":[-122.5, 37.7]}
+        },
+        {
+            "_id":"61e86a0fb4606b5fe783ac1f",
+            "user":"61e82ab3607db4a63e64f5f8",
+            "file":"Its us 5ever",
+            "location":{"type":"Point","coordinates":[-122.5, 37.7]}
+        },
+        {
+            "_id":"61e86a0fb4606b5fe783acg",
+            "user":"61e8704cd0659d138e740949",
+            "file":"sam hi there",
+            "location":{"type":"Point","coordinates":[-126.5, -55]}
+        },
+        {
+            "_id":"61e86a0fb4606b5fe783ach",
+            "user":"61e8704cd0659d138e740949",
+            "file":"sam its me again",
+            "location":{"type":"Point","coordinates":[-126.5, -65]}
+        },
+        {
+            "_id":"61e86a0fb4606b5fe783aci",
+            "user":"61e8704cd0659d138e740949",
+            "file":"sam one more time",
+            "location":{"type":"Point","coordinates":[-126.5, -55]}
+        }
+    ]     
+}
