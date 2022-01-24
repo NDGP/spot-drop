@@ -28,9 +28,11 @@ const Login = ({ auth = { email, password } }) => {
   };
 
   return (
-    <div>
+    <div className='form-container'>
+      <h1 className='form-header' > Login </h1>
+
       <form onSubmit={onSubmit}>
-      <div>
+      <div className='form-group'>
         <label htmlFor='email'>Email Address</label>
             <input
               id='email'
@@ -41,7 +43,7 @@ const Login = ({ auth = { email, password } }) => {
               required
               />
       </div>
-      <div >
+      <div className='form-group'>
           <label htmlFor='password'>Password</label>
           <input
             id='password'
@@ -51,8 +53,9 @@ const Login = ({ auth = { email, password } }) => {
             onChange={onChange}
             required
           />
-        </div>
+        </div >
         <input
+          className='button-5'
           type='submit'
           value='Login'
         />

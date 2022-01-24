@@ -14,7 +14,7 @@ const fetchDrops = async () => {
   try {
       const res = await api.get('/api/drops', {
           headers: {
-              'x-auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlODJhYjM2MDdkYjRhNjNlNjRmNWY4In0sImlhdCI6MTY0MjYwNTIzNSwiZXhwIjoxNjQyOTY1MjM1fQ.60GIVpFUEPu2OqRP77Bx5HcJDCs8JTvg2Mr4RlKbp6Q'
+              'x-auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlODJhYjM2MDdkYjRhNjNlNjRmNWY4In0sImlhdCI6MTY0MjcwMDA5MywiZXhwIjoxNjQzMDYwMDkzfQ.TO6Urd3w0uk7dVKwH6VwEk1IOmxAb673kN3NcodT-5M'
           }
       })
       console.log(res.data)
@@ -25,18 +25,23 @@ const fetchDrops = async () => {
 }
 
   return(
-    <Fragment>
-      {drops.map(drop => {
-        return (
-        <div key={drop._id} >
-          {drop.file}
-        <h4> located at {drop.location.coordinates[0]} and {drop.location.coordinates[1]}</h4>
-        </div>
-        
-        )
-      })}
-    </Fragment>
     
+        <div className='drop-body'>
+          <div class="drop-container">
+         
+          </div>
+          <div className='drop-info'>
+            <div className='avitar-user-container'>
+              <img 
+              className='avatar'
+              src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
+              alt="new"
+              />
+              <h2>userName</h2>
+            </div>
+          </div>
+        </div>
+        )    
   //   <div style={{margin: 20}} className="column">
   //   <div className="col s12 m6">
   //     <div className="card blue-grey darken-1">
@@ -47,7 +52,7 @@ const fetchDrops = async () => {
   //     </div>
   //   </div>
   // </div>  
-    )
+    
 };
 
 export default Drops;

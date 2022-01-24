@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import '../../App.css'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../actions/authActions'
@@ -48,7 +49,7 @@ const Register = ({ auth }) => {
             return console.log('passwords need to match')
         } else {
           console.log(user)
-          register(userName, email, password)
+         // register(userName, email, password)
 
             // registerUser(userName, email, password)
           return navigate('/')
@@ -56,8 +57,9 @@ const Register = ({ auth }) => {
       };
 
   return (
-    <div style={{margin: 50}}  className='form-container'>
-    <h1> Account Register </h1>
+    <>
+    <div className='form-container' >
+    <h1 className='form-header' > Register Account </h1>
     <form onSubmit={onSubmit}>
       <div className='form-group'>
         <label htmlFor='userName'>User Name</label>
@@ -68,9 +70,9 @@ const Register = ({ auth }) => {
           value={userName}
           onChange={onChange}
           required
-        />
+          />
       </div>
-      <div>
+      <div className="form-group" >
         <label htmlFor='email'>Email Address</label>
             <input
               id='email'
@@ -91,7 +93,7 @@ const Register = ({ auth }) => {
           onChange={onChange}
           required
           minLength='6'
-        />
+          />
       </div>
       <div className='form-group'>
         <label htmlFor='password2'>Confirm Password</label>
@@ -103,14 +105,17 @@ const Register = ({ auth }) => {
           onChange={onChange}
           required
           minLength='6'
-        />
+          />
       </div>
-      <input
+      <input 
+        className='button-5'
         type='submit'
         value='Register'
-      />
+        />
     </form>
   </div>
+ 
+</>
   );
 };
 

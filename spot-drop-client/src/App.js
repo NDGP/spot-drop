@@ -1,20 +1,21 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import 'materialize-css/dist/css/materialize.min.css'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './store';
-import Navbar from './components/layout/Navbar';
+import Navigation from './components/layout/Navigation';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Home from './components/Pages/Home';
+import Drops from './components/drops/Drops';
 
 const App = () => {
  
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Navbar />
+        <BrowserRouter>
+        <Navigation />
         <Fragment>
           <Routes>
             <Route path='/' element={<Home />} ></Route>

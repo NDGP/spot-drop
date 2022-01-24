@@ -10,7 +10,7 @@ const initialState = {
     drops: null,
     current: null,
     loading: false,
-    error: null
+    error: null,
 }
 
 export default (state = initialState, action) => {
