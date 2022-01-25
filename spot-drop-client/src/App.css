@@ -4,10 +4,23 @@ background-color: #0093E9;
 background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 }
 
+body{
+    overflow: hidden;
+}
+
+
 /* register login forms */
+.form-body  {
+    display: flex;
+    justify-content: space-between;
+    
+}
 .form-container {
-    max-width: 500px;
-    margin: 50px;
+    flex: 1;
+    max-width: 50vw;
+    min-height: 500px;
+    max-height: 500px;
+    margin: 25px;
     display: flex;  
     flex-direction: column;  
     background-color: #0093E9;
@@ -34,6 +47,132 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     font-family: 'Bebas Neue';
     color: white;
 }
+/* droplet animation */
+.drips-body {
+    background-color: white;
+    overflow: hidden;
+    flex: 3;
+    
+  }
+  
+  .drips {
+    position: relative;
+      width: 20px;
+      height: 20px;
+    top: -30px;
+    margin: 0 auto;
+      background: #3498DB;
+      -moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+    -moz-animation-name: drip;
+    -webkit-animation-name: drip;
+    animation-name: drip;
+    -moz-animation-timing-function: cubic-bezier(1,0,.91,.19);
+    -webkit-animation-timing-function: cubic-bezier(1,0,.91,.19);
+    animation-timing-function: cubic-bezier(1,0,.91,.19);
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  
+  .drips:before {
+    content: "";
+    position: absolute;
+    width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 30px solid #3498DB;
+    top: -22px;
+  }
+  
+  .wave {
+    position: relative;
+    opacity: 0;
+    top: 0;
+      width: 2px;
+      height: 1px;
+    border: #3498DB 7px solid;
+      -moz-border-radius: 300px / 150px;
+      -webkit-border-radius: 300px / 150px;
+      border-radius: 300px / 150px;
+    -moz-animation-name: ripple;
+    -webkit-animation-name: ripple;
+    animation-name: ripple;
+    -moz-animation-delay: 5s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  
+  .wave:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: -5px;
+    left: -5px;
+      width: 2px;
+      height: 1px;
+    border: #3498DB 5px solid;
+      -moz-border-radius: 300px / 150px;
+      -webkit-border-radius: 300px / 150px;
+      border-radius: 300px / 150px;
+    -moz-animation-name: ripple-2;
+    -webkit-animation-name: ripple-2;
+    animation-name: ripple-2;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes ripple {
+      from {
+        opacity: 1;
+      }
+      to {
+        width: 600px;
+        height: 300px;
+        border-width: 1px;
+        top: -100px;
+        opacity: 0;
+      }
+  }
+  
+  @keyframes ripple-2 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    100% {
+      width: 200px;
+      height: 100px;
+      border-width: 1px;
+      top: 100px;
+      left: 200px;
+    }
+  }
+  
+  @keyframes drip {
+      to {
+        top: 190px;
+      }
+  }
+
+
 
 /* regiser/ login button */
 .button-5 {
@@ -83,8 +222,17 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 
 
 /* Drops and drop info */
+.body {
+    display: flex;
+    
+}
 .drop-body {
     display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin-left: 25vw;
+    background-color: lightgray;    
+    box-shadow: 0 0 50px rgba(0, 0, 0, .5);
     
 }
 .drop-container {
@@ -96,31 +244,63 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     height: 50vw;
     position: relative;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+    
 }
 .drop-info {
-    
-    border-bottom: solid;
-    border-width: 1px;
+    font-family: 'Poppins';
+    font-size: 300;
     width: 50vw;
-    height: 50vw;
+    height:50px;
     
 }
 
 .avatar {
-    padding: 5px;
+    margin: 5px;
     vertical-align: middle;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
 }
-
+.info-container{
+    display: flex;
+}
 .avitar-user-container{
     display: flex;
     align-items: center;
+    height: 100%;
     justify-content: start;
-    border: solid;
+    border: white;
     border-width: 1px;
 }
+.name-info-list{
+    font-size: small;
+    padding-left: 5px;
+    align-self: center;
+    list-style-type: none;
+    margin: 0px;
+}
+
+/*comment section*/
+.comment-container{
+    height: auto;
+    width:  20vw;
+    background-color: lightgray;    
+}
+.comment-label{
+     padding: 10px;
+}
+.comment-input{
+    margin: 10px;
+}
+.comment-list{
+    
+    list-style-type: none;
+    color: black;
+}
+
 
 /* scan bar button */
 .scan-button {

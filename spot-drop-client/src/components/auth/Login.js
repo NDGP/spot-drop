@@ -28,7 +28,9 @@ const Login = ({ auth = { email, password } }) => {
   };
 
   return (
-    <div className='form-container'>
+      <div className='form-body'>
+        
+    <div style={{ minHeight: '300px', maxHeight: '300px'}} className='form-container'>
       <h1 className='form-header' > Login </h1>
 
       <form onSubmit={onSubmit}>
@@ -52,16 +54,23 @@ const Login = ({ auth = { email, password } }) => {
             value={password}
             onChange={onChange}
             required
-          />
+            />
         </div >
         <input
           className='button-5'
           type='submit'
           value='Login'
-        />
+          />
       </form>
     </div>
+    <div className='drips-body'>
+    
+      <div style={{margin: '175px auto'}} class="drips"></div>
+      <div  style={{margin: '175px auto'}}class="wave"></div>
+    
+    </div >
 
+    </div>
   )
 };
 

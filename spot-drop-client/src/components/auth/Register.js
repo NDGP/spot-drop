@@ -57,7 +57,7 @@ const Register = ({ auth }) => {
       };
 
   return (
-    <>
+    <div className='form-body'>
     <div className='form-container' >
     <h1 className='form-header' > Register Account </h1>
     <form onSubmit={onSubmit}>
@@ -114,8 +114,14 @@ const Register = ({ auth }) => {
         />
     </form>
   </div>
+  <div className='drips-body'>
+    
+      <div style={{margin: '175px auto'}} class="drips"></div>
+      <div  style={{margin: '175px auto'}}class="wave"></div>
+    
+  </div >
+  </div>
  
-</>
   );
 };
 
