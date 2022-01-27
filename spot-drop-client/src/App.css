@@ -7,8 +7,6 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 body{
     overflow: hidden;
 }
-
-
 /* register login forms */
 .form-body  {
     display: flex;
@@ -44,7 +42,7 @@ body{
     justify-content: space-between;
     margin-bottom: 5px;
     flex: 1;
-    font-family: 'Bebas Neue';
+    font-family: 'Poppins';
     color: white;
 }
 /* droplet animation */
@@ -222,66 +220,93 @@ body{
 
 
 /* Drops and drop info */
-.body {
-    display: flex;
-    
-}
-.drop-body {
+.drop-container{
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
     width: 50vw;
     margin-left: 25vw;
-    background-color: lightgray;    
-    box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+}
+.drop__header{
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.user-info{
+    display: flex;
+    margin-left: 5px ;
+}
+.user-info:hover{
+    display: flex;
+    margin-left: 5px ;
+    opacity: .5;
+    cursor: pointer;
+}
+.user-info__img{
+    display: flex;
+    margin-bottom: 5px;
+    margin-right: 2px;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #888888;
+
+}
+.user-info__user-name{
+    font-size: 10px;
+    margin: .5vh;
+}
+.user-info__user-name:hover{
+    opacity: .5;
+    font-size: 10px;
+    margin: .5vh;
+    cursor: pointer;
+}
+.drop{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(215, 210, 210);
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 200px;
+    max-height: 50vw;
+    padding: 5px 0px;
+    border: solid;
+    border-color: rgb(191, 191, 191);
+    border-width: .5px;
+    box-shadow: 0px 0px 5px #888888;
     
 }
-.drop-container {
-    background: url("https://images.unsplash.com/photo-1574007557239-acf6863bc375?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 50vw;
-    height: 50vw;
-    position: relative;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
-    
+.drop__img__container{
+    width: auto;
+    height:250px;
+    width: 250px;
+
 }
-.drop-info {
+.drop__img {
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+}
+.drop__description{
+    border-top: solid;
+    border-width: .3px;
+    margin: 0px 5px 0px 5px;
+   
     font-family: 'Poppins';
-    font-size: 300;
-    width: 50vw;
-    height:50px;
-    
+    font-size: x-small;
+}
+.material-icons-outlined{
+    margin-right: 5px;
+}
+.material-icons-outlined:hover{
+    opacity: .5;
+    margin-right: 5px;
+    cursor: pointer;
 }
 
-.avatar {
-    margin: 5px;
-    vertical-align: middle;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: solid;
-    border-width: 1px;
-    border-color: white;
-}
-.info-container{
-    display: flex;
-}
-.avitar-user-container{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    justify-content: start;
-    border: white;
-    border-width: 1px;
-}
-.name-info-list{
-    font-size: small;
-    padding-left: 5px;
-    align-self: center;
-    list-style-type: none;
-    margin: 0px;
-}
+
 
 /*comment section*/
 .comment-container{
@@ -296,22 +321,61 @@ body{
     margin: 10px;
 }
 .comment-list{
-    
     list-style-type: none;
     color: black;
 }
 
+/* Create drop section */
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
 
-/* scan bar button */
-.scan-button {
-    background-color: #fa6400;
-    font-family: 'Bebas Neue';
-    height: auto;
-    color: white;
-    display: inline-flex;
-    padding-left: 5px;
-    width: 100%;
-  }
+.inputfile + label {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin-top: 10px;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
 
- 
-    
+.inputfile + label:hover,
+.inputfile + label:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.inputfile + label:hover {
+  transform: translateY(-1px);
+}
+
+.button-5 + label:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}

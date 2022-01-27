@@ -9,6 +9,7 @@ import {
     LOGOUT,
     CLEAR_ERRORS
 } from "../actions/types"
+import setAuthToken from '../utils/setAuthToken'
 
 const register_API_URL = 'http://localhost:5000/api/users'
 const config = {
@@ -18,19 +19,21 @@ const config = {
 }
 
 //register user
-export const registerUser = async (userName, email, password) => {
-  return (dispatch) => {
+export const registerUser = (user) => async dispatch => {
     try {
+      const {userName, email, password } = user
       console.log('this is the try', userName, email, password)
-      const res = axios.post(register_API_URL, {
+      const res = await axios.post(register_API_URL, {
         userName,
         email,
-        password,
+        password
       }, config);
-    
+
+      const data = res.json
+      console.log(data)
       dispatch({
         type: REGISTER_SUCCESS,
-        payload: res.json
+        payload: data
     
       })
       
@@ -41,8 +44,7 @@ export const registerUser = async (userName, email, password) => {
         payload: err
       })
     }
-  }
-};
+  };
 
 
 

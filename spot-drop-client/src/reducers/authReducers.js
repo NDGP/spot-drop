@@ -15,19 +15,24 @@ const initialState = {
     userName: '',
     email: '',
     password: '',
-    error: null
+    error: null,
+    isAuthenticated: false,
+    loading: true
 }
 
 export default (state = initialState, action) => {
     switch(action.type){
         case REGISTER_SUCCESS:
+            localStorage.setItem('token', action.payload.token)
             return {
-                ...state,
-                ...action.payload
+                    users: [...state, action.payload]
             };
         case AUTH_ERROR:
             return{
-                ...action.payload
+                ...state,
+                ...action.payload,
+                isAuthenticated: true,
+                loading: false
             }
         
         default:

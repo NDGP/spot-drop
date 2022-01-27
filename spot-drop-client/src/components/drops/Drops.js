@@ -1,11 +1,10 @@
-import React, { useEffect, useState, Fragment }from "react";
-import { Accordion } from "react-bootstrap";
+import React, { useEffect, useState }from "react";
 import api from "../../api/db";
 
 
 const Drops = () => {
     useEffect(() => {
-      fetchDrops()
+//       fetchDrops()
        
     },[])
 
@@ -33,64 +32,26 @@ const handelCommentsClick = () => {
 }
 
   return(
-    <div className='body'>
-        <div style={{marginLeft:`${containerShift}`}} className='drop-body'>
-          <div className='drop-info'>
-            <div className='avitar-user-container'>
-              <div className='info-container'>
-                <img 
-                className='avatar'
-                src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
-                alt="new"
-                />
-                <ul className='name-info-list'>
-                  <li>@userName</li>
-                  <li style={{fontWeight: 'lighter'}}>title</li>
-                </ul>
-              </div>
-                <span style={{flex: 'start', cursor:'pointer'}} onClick={handelCommentsClick} class="material-icons-outlined">chat</span>            
-              </div>
-          </div>
-            <div class="drop-container">
-            </div>
+    <div className='drop-container'>
+      <div className='drop'>
+        <div className='drop__header'>
+        <div className='user-info'>
+          <img className='user-info__img' src={'https://kidscreen.com/wp/wp-content/uploads/2019/10/barney.jpg'} alt='avitar-bubble'/>
+          <h2 className='user-info__user-name'>username</h2>
         </div>
-        <div style={{display: `${comments}`}} className='comment-container'>
-        <div className='form-group'>
-        <label className='comment-label' htmlFor='comment'>comment</label>
-            <input
-              className='comment-input'
-              id='comment'
-              type='comment'
-              name='comment'
-              />
-            <ul className='comment-list'>
-              <li>
-              <img 
-                className='avatar'
-                src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
-                alt="new"
-                />
-                <p>
-                  oifjewwoiajfwwa
-                </p>
-                
-              </li>
-            </ul>
+          <span className="material-icons-outlined">question_answer</span>        
+        </div>
+        <div className='drop__img__container'>
+            <img className='drop__img' src={'https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2011/11/square-format-01.jpg?resize=600%2C600&ssl=1'} alt='drop-img'/>
+        </div>
+        <div>
+          <h2 style={{marginLeft: '5px', marginTop: '5px'}}className='user-info__user-name'>username</h2>
+          <p className='drop__description'>description section </p> 
+
+        </div>
       </div>
-        </div>
-    </div>
-  )    
-  //   <div style={{margin: 20}} className="column">
-  //   <div className="col s12 m6">
-  //     <div className="card blue-grey darken-1">
-  //       <div className="card-content white-text">
-  //         <span className="card-title">Bills Drop</span>
-  //         <p>drop count = {drops.length}</p>
-  //       </div>
-  //     </div>
-  //   </div>
-  // </div>  
-    
+  </div>
+    )
 };
 
 export default Drops;

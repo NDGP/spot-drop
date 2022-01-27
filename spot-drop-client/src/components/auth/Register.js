@@ -1,44 +1,25 @@
 import React, { useState } from "react";
-import axios from "axios";
 import '../../App.css'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../actions/authActions'
 
 
-const Register = ({ auth }) => {
+const Register = ({ registerUser }) => {
     //!!replace once auth is set up
     const navigate = useNavigate()
 
-    const register_API_URL = 'http://localhost:5000/api/users'
-    const config = {
-        headers: {
-            'Content-type': 'application/json'
-        }
-    }
-
-
-
-    // const register = async (userName, email, password) => {
-    //   try {
-    //   const res = await axios.post(register_API_URL, {
-    //       userName,
-    //       email,
-    //       password,
-    //     }, config);
-    //     console.log(res.data)
-    //   } catch (err) {
-    //     console.log(err.message)
-    //   }
-    // } 
-  
-
-    const [user, setUser] = useState({ ...auth, password2: ''});
-    
+    const [user, setUser] = useState({
+      userName: '',
+      email: '',
+      password: '',
+      password2: ''
+    })
     
     const { userName, email, password, password2 } = user;
     
-  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
+    const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
       const onSubmit = (e) => {
         
@@ -49,12 +30,10 @@ const Register = ({ auth }) => {
             return console.log('passwords need to match')
         } else {
           console.log(user)
-         // register(userName, email, password)
-
-            // registerUser(userName, email, password)
-          return navigate('/')
+            registerUser(user)
+            //return navigate('/')
         }
-      };
+      };  
 
   return (
     <div className='form-body'>
@@ -116,8 +95,8 @@ const Register = ({ auth }) => {
   </div>
   <div className='drips-body'>
     
-      <div style={{margin: '175px auto'}} class="drips"></div>
-      <div  style={{margin: '175px auto'}}class="wave"></div>
+      <div style={{margin: '175px auto'}} className="drips"></div>
+      <div  style={{margin: '175px auto'}}className="wave"></div>
     
   </div >
   </div>
@@ -125,11 +104,8 @@ const Register = ({ auth }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  auth: state.auth
-})
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+}
 
-export default connect(
-  mapStateToProps,
-  { registerUser }
-  )(Register);
+export default connect(null,{ registerUser })(Register);
