@@ -9,9 +9,13 @@ export const CLEAR_LOCATION = "CLEAR_LOCATION";
 export const DROP_ERRORS = "DROP_ERRORS";
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
+export const LOAD_USER = 'LOAD_USER'
 export const USER_LOADED = 'USER_LOADED';
 export const AUTH_ERROR = 'AUTH_ERROR';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const LOAD_LOCATION= 'LOAD_LOCATION';
+export const LOCATION_ERROR= 'LOCATION_ERROR';
+

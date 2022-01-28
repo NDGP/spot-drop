@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../../App.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -6,10 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../actions/authActions'
 
 
-const Register = ({ registerUser }) => {
+const Register = ({ registerUser, auth : { isAuthenticated } }) => {
     //!!replace once auth is set up
     const navigate = useNavigate()
-
+    useEffect(() => {
+     if (isAuthenticated) {
+      navigate('/')
+     }
+    }, [isAuthenticated])
     const [user, setUser] = useState({
       userName: '',
       email: '',
@@ -107,5 +111,8 @@ const Register = ({ registerUser }) => {
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
 }
+const mapStateToProps = state => ({
+  auth: state.auth
+})
 
-export default connect(null,{ registerUser })(Register);
+export default connect(mapStateToProps,{ registerUser })(Register);

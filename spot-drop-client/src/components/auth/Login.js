@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import { LOGIN_SUCCESS } from "../../actions/types";
+import { loginUser } from "../../actions/authActions";
 
-const Login = ({ auth = { email, password } }) => {
+const Login = ({ loginUser }) => {
      
       //!!replace once auth is set up
       const navigate = useNavigate()
@@ -23,6 +23,7 @@ const Login = ({ auth = { email, password } }) => {
         return console.log('fill all fields')
     } else {
         console.log('Logged in')
+        loginUser(user)
         return navigate('/', { replace: true })
     }
   };
@@ -79,5 +80,5 @@ const mapStateToProps = state => ({
   auth: state.auth
 })
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps, { loginUser })(Login);
 
